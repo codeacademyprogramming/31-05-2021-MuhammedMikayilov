@@ -6,7 +6,8 @@ class WeatherService extends HttpClient {
   }
 
   getWeathers(url) {
-    return this.get(`weather?q=${url}&appid=16596fe956171a7376f2ba91213e3499`);
+    return this.get(`weather?q=${url}&appid=615eec4aa7d88d615af9ff2b0561977c
+    `);
   }
 }
 

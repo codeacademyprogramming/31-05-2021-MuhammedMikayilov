@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Weather from "../Weather/index";
 import { weatherService } from "../../Service/Weather";
 
-jest.mock("../../Service/Weather");
+jest.mock("../../Service/Weather/index.js");
 
 test("should render Weather App", () => {
   const { getByText } = render(<Weather />);
@@ -15,7 +15,7 @@ test("should render Weather App", () => {
 });
 
 test("should add Weather", async () => {
-  weatherService.mockResolvedValueOnce({ name: "Baku" });
+  weatherService.mockResolvedValue("Baku");
   const { getByText, getByLabelText, getByTestId } = render(<Weather />);
 
   fireEvent.change(getByLabelText("Add new City"), {
